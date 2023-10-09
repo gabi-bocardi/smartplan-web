@@ -1,5 +1,38 @@
 {
     "cSpell.words": [
-        "smartplan"
-    ]
+        "smartplan",
+        "stylelint"
+    ],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+        "source.fixAll.stylelint": true,
+        "source.organizeImports": false
+    },
+    "editor.tabSize": 2,
+    "eslint.alwaysShowStatus": true,
+    "eslint.enable": true,
+    "eslint.lintTask.enable": true,
+    "eslint.packageManager": "npm",
+    "eslint.run": "onSave",
+    "files.exclude": {
+        "dist/": false
+    },
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "testExplorer.sort": "byLocation",
+    "testExplorer.showOnRun": true,
+    "path-intellisense.extensionOnImport": true,
+    "tsimporter.disabled": true,
+    "tslint.autoFixOnSave": true,
+    "tslint.enable": true,
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "typescriptHero.imports.disableImportRemovalOnOrganize": true,
+    "typescriptHero.imports.disableImportsSorting": true,
+    "stylelint.validate": [
+        "typescript",
+        "typescriptreact"
+    ],
+    "css.validate": false,
+    "less.validate": false,
+    "scss.validate": false,
 }
