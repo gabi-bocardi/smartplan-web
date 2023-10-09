@@ -12,7 +12,7 @@
     "eslint.alwaysShowStatus": true,
     "eslint.enable": true,
     "eslint.lintTask.enable": true,
-    "eslint.packageManager": "yarn",
+    "eslint.packageManager": "npm",
     "eslint.run": "onSave",
     "files.exclude": {
         "dist/": false
@@ -35,7 +35,4 @@
     "css.validate": false,
     "less.validate": false,
     "scss.validate": false,
-    "github-actions.workflows.pinned.workflows": [
-        ".github/workflows/vercel.yaml"
-    ]
 }
