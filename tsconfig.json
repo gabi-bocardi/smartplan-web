@@ -1,11 +1,17 @@
 {
   "compilerOptions": {
+    "baseUrl": "./src",
     "target": "es5",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
+    "types": [
+      "react"
+    ],
+    "sourceMap": true,
+    "importHelpers": true,
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -18,9 +24,12 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
   },
   "include": [
-    "src"
-  ]
+    "./src",
+    "stylelint.config.js",
+    "./*.ts",
+    ".eslintrc.js",
+  ],
 }
