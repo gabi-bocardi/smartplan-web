@@ -17,7 +17,7 @@ import theme from 'style/theme';
 
 function App(): JSX.Element {
   const [state, dispatch] = useReducer(UserReducer, initialState);
-  const [response] = useAxios<IReceipt[]>('http://localhost:3000/api/receipts');
+  const [response] = useAxios('http://localhost:3000/api/receipts');
 
   const userContext = useMemo(() => ({ state, dispatch }), [state]);
 
