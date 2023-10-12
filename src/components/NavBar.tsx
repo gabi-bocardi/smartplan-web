@@ -2,6 +2,7 @@ import { When } from 'react-if';
 import { Link } from 'react-router-dom';
 
 import { useUserContext } from './context/UserContext';
+import Logo from '../smartplan-logo/logo-transparent-bg.png';
 
 export default function NavBar() {
   const { state } = useUserContext();
@@ -10,7 +11,7 @@ export default function NavBar() {
     <nav className='navbar navbar-expand navbar-light bg-light '>
       <div className='navbar-brand'>
         <img
-          src={require('../smartplan-logo/icon-transparent-bg.png')}
+          src={Logo}
           width='70'
           height='70'
         />

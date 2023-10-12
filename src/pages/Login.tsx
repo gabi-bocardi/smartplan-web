@@ -2,17 +2,15 @@ import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 
-import { IUser, useUserContext } from '../components/context/UserContext';
+import { IUser } from '../components/context/UserContext';
 
 export default function Login() {
-  const { setUser } = useUserContext();
   const { register, handleSubmit } = useForm<IUser>();
   const history = useHistory();
 
   async function onSubmit(data: IUser): Promise<void> {
     const user = await axios.post('http://localhost:3000/api/user', data);
     if (user.data) {
-      setUser(user.data);
       history.push('/dashboard');
     } else {
       alert('Invalid username or password');

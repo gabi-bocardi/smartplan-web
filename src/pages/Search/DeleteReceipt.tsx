@@ -1,10 +1,4 @@
-import { IReceipt } from '../../components/context/ReceiptsContext';
-
-export default function DeleteReceipt({
-  receipt,
-}: {
-  receipt: IReceipt;
-}): JSX.Element {
+export default function DeleteReceipt(): JSX.Element {
   return (
     <div
       className='modal fade'

@@ -2,13 +2,10 @@ import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 
-import { IReceipt, useReceiptsContext } from '../components/context/ReceiptsContext';
-
 type INewReceipt = Omit<IReceipt, '_id'>;
 
-export default function NewReceipt() {
+export default function NewReceipt(): JSX.Element {
   const { register, handleSubmit } = useForm<INewReceipt>();
-  const { receipts, setReceipts } = useReceiptsContext();
   const history = useHistory();
 
   async function onSubmit(data: INewReceipt): Promise<void> {

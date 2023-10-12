@@ -1,11 +1,9 @@
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 
-import { IReceipt, useReceiptsContext } from '../../components/context/ReceiptsContext';
-
 type IReceiptForm = Omit<IReceipt, '_id' | 'product'>;
 
-export default function EditRecord({
+export default function EditReceipt({
   receipt,
   onClose,
 }: {
@@ -103,4 +101,7 @@ export default function EditRecord({
       </div>
     </div>
   );
+}
+function useReceiptsContext(): { setReceipts: any; receipts: any; } {
+  throw new Error('Function not implemented.');
 }

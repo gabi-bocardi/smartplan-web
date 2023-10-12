@@ -1,12 +1,9 @@
 import { ChakraBaseProvider } from '@chakra-ui/react';
 import useAxios from 'axios-hooks';
-import {
-  useEffect, useMemo, useReducer, useState,
-} from 'react';
+import { useMemo, useReducer } from 'react';
 import { If, Then } from 'react-if';
 import { Route, Switch } from 'react-router-dom';
 
-import { IReceipt, ReceiptsContext } from './components/context/ReceiptsContext';
 import { UserContext, UserReducer, initialState } from './components/context/UserContext';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
@@ -18,7 +15,7 @@ import SearchPage from './pages/Search/SearchPage';
 import loadingSpinner from './smartplan-logo/loading-spinner.svg';
 import theme from 'style/theme';
 
-function App() {
+function App(): JSX.Element {
   const [state, dispatch] = useReducer(UserReducer, initialState);
   const [response] = useAxios<IReceipt[]>('http://localhost:3000/api/receipts');
 

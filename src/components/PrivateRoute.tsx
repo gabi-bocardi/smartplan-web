@@ -3,9 +3,9 @@ import { Redirect, Route, RouteProps } from 'react-router-dom';
 import { useUserContext } from './context/UserContext';
 
 export function PrivateRoute(props: RouteProps): JSX.Element {
-  const { user } = useUserContext();
+  const { state } = useUserContext();
 
-  if (!user) {
+  if (!state) {
     return <Redirect exact to='/' />;
   }
 

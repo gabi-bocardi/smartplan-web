@@ -9,11 +9,12 @@ import { FiBriefcase } from 'react-icons/fi';
 import { TbBeach } from 'react-icons/tb';
 import { Link } from 'react-router-dom';
 
-import { useReceiptsContext } from '../components/context/ReceiptsContext';
-import { useUserContext } from '../components/context/UserContext';
+import Avatar from '../assets/avatar.jpeg';
+import { useUserContext } from 'components/context/UserContext';
 
 export default function Dashboard(): JSX.Element {
-  const { user } = useUserContext();
+  const { state } = useUserContext();
+
   const { receipts } = useReceiptsContext();
   function getReceiptsByCategory(category: string): number {
     return receipts.filter((receipt) => receipt.category === category).length;
@@ -42,11 +43,11 @@ export default function Dashboard(): JSX.Element {
           <img
             className='img-fluid rounded-circle'
             alt='Profile Picture'
-            src={require('../avatar.jpeg')}
+            src={Avatar}
             style={{ width: '170px', height: '170px' }}
           />
         </Link>
-        <h1 className='p-5'>Welcome {user?.username}</h1>
+        <h1 className='p-5'>Welcome {state?.username}</h1>
       </div>
       <div className='align-items-center w-100 text-center py-2 my-5 '>
         <h3 className='secondary'>

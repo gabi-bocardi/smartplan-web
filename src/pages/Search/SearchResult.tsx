@@ -5,7 +5,6 @@ import { BsTrash } from 'react-icons/bs';
 import { When } from 'react-if';
 
 import EditReceipt from './EditReceipt';
-import { IReceipt, useReceiptsContext } from '../../components/context/ReceiptsContext';
 
 export default function SearchResult({ receipt }: { receipt: IReceipt }) {
   const { setReceipts, receipts } = useReceiptsContext();
