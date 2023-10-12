@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { useForm } from "react-hook-form";
-import { useReceiptsContext } from "../../components/ReceiptsContext";
+import { useReceiptsContext } from "../../components/context/ReceiptsContext";
 import SearchResult from "./SearchResult";
 
 interface ISearchForm {
