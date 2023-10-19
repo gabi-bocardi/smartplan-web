@@ -1,10 +1,10 @@
-import { BsTrash } from "react-icons/bs";
-import { AiOutlineEdit } from "react-icons/ai";
-import EditReceipt from "./EditReceipt";
-import { IReceipt, useReceiptsContext } from "../../components/ReceiptsContext";
-import { useState } from "react";
-import { When } from "react-if";
-import axios from "axios";
+import axios from 'axios';
+import { useState } from 'react';
+import { AiOutlineEdit } from 'react-icons/ai';
+import { BsTrash } from 'react-icons/bs';
+import { When } from 'react-if';
+
+import EditReceipt from './EditReceipt';
 
 export default function SearchResult({ receipt }: { receipt: IReceipt }) {
   const { setReceipts, receipts } = useReceiptsContext();
@@ -22,7 +22,7 @@ export default function SearchResult({ receipt }: { receipt: IReceipt }) {
       </When>
       <td>{receipt.product}</td>
       <td> {receipt.shop}</td>
-      <td>{new Date(receipt.dateOfPurchase).toISOString().split("T")[0]}</td>
+      <td>{new Date(receipt.dateOfPurchase).toISOString().split('T')[0]}</td>
       <td>
         <AiOutlineEdit onClick={() => setEdit(!edit)} />
       </td>
