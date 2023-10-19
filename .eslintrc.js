@@ -1,8 +1,6 @@
 module.exports = {
   extends: [
     '@polyfillhq/eslint-config/react',
-    'eslint:recommended',
-    'plugin:import/typescript',
   ],
   settings: {
     'import/resolver': {

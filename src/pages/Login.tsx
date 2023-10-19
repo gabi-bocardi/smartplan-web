@@ -1,8 +1,7 @@
+import axios from 'axios';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
 
 import { IUser } from '../components/context/UserContext';
-import axios from 'axios';
 
 export default function Login() {
   const { register, handleSubmit } = useForm<IUser>();

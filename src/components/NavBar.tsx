@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useUserContext } from './context/UserContext';
 import Logo from '../smartplan-logo/logo-transparent-bg.png';
 
-export default function NavBar() {
+export default function NavBar():JSX.Element {
   const { state } = useUserContext();
 
   return (

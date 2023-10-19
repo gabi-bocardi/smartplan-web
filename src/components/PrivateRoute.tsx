@@ -1,13 +1,13 @@
-import { Redirect, Route, RouteProps } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
 
 import { useUserContext } from './context/UserContext';
 
-export function PrivateRoute(props: RouteProps): JSX.Element {
+export function PrivateRoute(): JSX.Element {
   const { state } = useUserContext();
 
-  if (!state) {
-    return <Redirect exact to='/' />;
+  if (!state?.username) {
+    return <Navigate to='/' />;
   }
 
-  return <Route {...props} />;
+  return <Outlet />;
 }
