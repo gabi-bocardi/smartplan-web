@@ -1,10 +1,9 @@
-import { ChakraBaseProvider } from '@chakra-ui/react';
+import { ChakraProvider } from '@chakra-ui/react';
 import { useMemo, useReducer } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import Footer from './components/Footer';
-import NavBar from './components/NavBar';
 import { UserContext, UserReducer, initialState } from './context/UserContext';
+import { PageWrapper } from 'pages/PageWrapper';
 import RouterIndex from 'RouterIndex';
 import theme from 'style/theme';
 
@@ -15,12 +14,13 @@ function App(): JSX.Element {
 
   return (
     <BrowserRouter>
-      <ChakraBaseProvider theme={theme}>
+      <ChakraProvider theme={theme}>
         <UserContext.Provider value={userContext}>
-          <RouterIndex />
-          <Footer />
+          <PageWrapper>
+            <RouterIndex />
+          </PageWrapper>
         </UserContext.Provider>
-      </ChakraBaseProvider>
+      </ChakraProvider>
     </BrowserRouter>
   );
 }

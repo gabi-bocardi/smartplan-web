@@ -1,11 +1,23 @@
-import { extendBaseTheme } from '@chakra-ui/react';
+import { extendTheme } from '@chakra-ui/react';
 
-const theme = extendBaseTheme({
+import { buttonTheme } from './button';
+import { inputTheme } from './input';
+
+const theme = extendTheme({
   components: {
-    Input: {
-      defaultProps: {
-        focusBorderColor: 'blue.500',
+    Button: buttonTheme,
+    Input: inputTheme,
+    FormLabel: {
+      baseStyle: {
+        margin: 0,
       },
+    },
+  },
+  colors: {
+    brand: {
+      primary: '#386641',
+      secondary: '#6A994E',
+      light: '#F2E8CF',
     },
   },
 });

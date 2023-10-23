@@ -1,5 +1,5 @@
 import {
-  Button, Flex, FormLabel, Heading, Input,
+  Button, Center, Flex, FormLabel, Heading, Input,
 } from '@chakra-ui/react';
 import { useForm } from 'react-hook-form';
 
@@ -17,13 +17,13 @@ export function Registration(): JSX.Element {
   }
 
   return (
-    <>
+    <Flex direction='column' maxW='800px' mx='auto'>
       <Heading>Registration</Heading>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Flex direction='column'>
+        <Flex direction='column' gap='10px'>
           <FormGroup>
             <FormLabel>First Name</FormLabel>
-            <Input {...register('FirstName')} colorScheme='green' variant='outline' />
+            <Input placeholder='First Name' {...register('FirstName')} />
           </FormGroup>
           <FormGroup>
             <FormLabel>Last Name</FormLabel>
@@ -44,6 +44,6 @@ export function Registration(): JSX.Element {
           <Button type='submit'>Register</Button>
         </Flex>
       </form>
-    </>
+    </Flex>
   );
 }
