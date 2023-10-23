@@ -17,7 +17,6 @@ function App(): JSX.Element {
     <BrowserRouter>
       <ChakraBaseProvider theme={theme}>
         <UserContext.Provider value={userContext}>
-          <NavBar />
           <RouterIndex />
           <Footer />
         </UserContext.Provider>
