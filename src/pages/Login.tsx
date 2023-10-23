@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 
-import { IUser } from '../components/context/UserContext';
+import { IUser } from '../context/UserContext';
 
-export default function Login() {
+export default function Login(): JSX.Element {
   const { register, handleSubmit } = useForm<IUser>();
   // const history = useHistory();
 

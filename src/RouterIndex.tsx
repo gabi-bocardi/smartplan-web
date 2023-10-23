@@ -5,6 +5,7 @@ import Dashboard from 'pages/Dashboard';
 import ErrorPage from 'pages/ErrorPage';
 import Login from 'pages/Login';
 import NewReceipt from 'pages/NewReceipt';
+import { Registration } from 'pages/Registration';
 import SearchPage from 'pages/Search/SearchPage';
 
 export default function RouterIndex(): JSX.Element {
@@ -12,6 +13,7 @@ export default function RouterIndex(): JSX.Element {
     <Routes>
       <Route path='/*' element={<ErrorPage />} />
       <Route path='/' element={<Login />} />
+      <Route path='/registration' element={<Registration />} />
       <Route element={<PrivateRoute />}>
         <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/search' element={<SearchPage />} />

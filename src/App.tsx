@@ -2,9 +2,9 @@ import { ChakraBaseProvider } from '@chakra-ui/react';
 import { useMemo, useReducer } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import { UserContext, UserReducer, initialState } from './components/context/UserContext';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
+import { UserContext, UserReducer, initialState } from './context/UserContext';
 import RouterIndex from 'RouterIndex';
 import theme from 'style/theme';
 
