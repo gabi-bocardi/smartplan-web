@@ -3,18 +3,33 @@ import {
 } from '@chakra-ui/react';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 
 import { FormGroup } from 'components/FormGroup';
+import { useAuth } from 'hooks/useFirebase';
 import { IUser } from 'types';
 
 type RegistrationForm = IUser & { Password: string, ConfirmPassword: string };
 
 export function Registration(): JSX.Element {
+  const navigate = useNavigate();
+  const { createUser } = useAuth();
   const { register, handleSubmit, formState } = useForm<RegistrationForm>();
 
   async function onSubmit(data: RegistrationForm): Promise<void> {
-    const response = await axios.post('/api/registration', data);
+    const newUser = {
+      FirstName: data.FirstName,
+      LastName: data.LastName,
+      Email: data.Email,
+      Password: data.Password,
+    };
+
+    await createUser(newUser.Email, newUser.Password);
+    await axios.post('/api/user', newUser);
+
+    navigate('/login');
   }
+
   return (
     <Flex direction='column' maxW='800px' mx='auto' gap='40px'>
       <Heading as='h1' textStyle='h1' alignSelf='center' color='brand.primary'>Registration</Heading>
@@ -42,7 +57,7 @@ export function Registration(): JSX.Element {
           </FormGroup>
           <ButtonGroup as={Flex} justifyContent='center'>
             <Button type='submit' width='150px'>🚀 Register</Button>
-            <Button variant='outline' width='150px'>Cancel</Button>
+            <Button variant='outline' width='150px' onClick={() => navigate('/login')}>Cancel</Button>
           </ButtonGroup>
         </Flex>
       </form>

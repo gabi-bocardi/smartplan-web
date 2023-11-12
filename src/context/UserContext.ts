@@ -4,9 +4,11 @@ export interface IUser {
   username: string;
   password: string;
 }
-interface IUserContext {
+
+export interface IUserContext {
   state?: IUser;
   dispatch: Dispatch<IUserReducerAction>;
+  isAuthenticated: boolean;
 }
 
 interface IUserReducerAction {
@@ -33,7 +35,8 @@ export function UserReducer(state: IUser, action: IUserReducerAction): IUser {
 
 export const UserContext = createContext<IUserContext>({
   state: undefined,
-  dispatch: () => {},
+  dispatch: () => { },
+  isAuthenticated: false,
 });
 
 export function useUserContext(): IUserContext {
