@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
 
 import FormGroup from 'components/form/FormGroup';
-import { useAuth } from 'hooks/useFirebase';
+import { useUserContext } from 'context/UserContext';
 import { IUser } from 'types';
 
 type RegistrationForm = Omit<IUser, 'Id' | 'CreatedAt' | 'AuthToken' > & { Password: string, ConfirmPassword: string };
@@ -23,7 +23,7 @@ const VALIDATION_SCHEMA = yup.object().shape({
 
 export function Registration(): JSX.Element {
   const navigate = useNavigate();
-  const { createUser } = useAuth();
+  const { createUser } = useUserContext();
   const { register, handleSubmit, formState: { errors } } = useForm<RegistrationForm>({
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     resolver: yupResolver(VALIDATION_SCHEMA),

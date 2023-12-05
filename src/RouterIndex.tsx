@@ -16,7 +16,7 @@ export default function RouterIndex(): JSX.Element {
   return (
     <Routes>
       <Route path='/*' element={<ErrorPage />} />
-      {/* user will navigate to different routes depending on wether they are authenticated or not */}
+      {/* user will navigate to different routes depending on whether they are authenticated or not */}
       <Route
         path='/'
         element={(
