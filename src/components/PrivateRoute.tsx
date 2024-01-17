@@ -1,6 +1,6 @@
 import { Navigate, Outlet } from 'react-router-dom';
 
-import { useUserContext } from './context/UserContext';
+import { useUserContext } from '../context/UserContext';
 
 export function PrivateRoute(): JSX.Element {
   const { state } = useUserContext();
